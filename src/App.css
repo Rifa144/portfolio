@@ -1,0 +1,164 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; 
+  color: rgb(15, 15, 15);
+  font-family: 'Roboto', sans-serif;;
+}
+
+
+.slide-in{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height:100vh;
+  background-color:  rgb(15, 15, 15);
+  transform-origin: bottom;
+  border-radius: '2000px',
+ 
+}
+
+.slide-out{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height:100vh;
+  background-color: rgb(15, 15, 15);
+  transform-origin: top;
+  border-radius: '2000px'
+ 
+}
+
+
+
+/* Container for the entire about */
+
+.content {
+  margin: 100px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 50px; /* Remove default padding */
+  opacity: 0; /* Start hidden */
+  transition: opacity 1s ease-in; /* Smooth transition for opacity */
+}
+
+/* Fade-in effect */
+.content.fadeIn {
+  opacity: 1; /* Fade in when in view */
+}
+
+/* Styling for the information section */
+.content .myInfo {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: start;
+
+}
+
+.greet {
+  width: 85%;
+  text-align: left;
+  font-size: 20px;
+  font-family: 'Roboto', sans-serif;
+  color: #017f88;
+  color:rgb(15, 15, 15)
+}
+
+.shortIntro {
+  color: #303030;
+  width: 90%;
+  text-align: left;
+}
+
+.content .myInfo button {
+  padding: 10px;
+  border: 2px solid rgb(15, 15, 15);
+
+  width: 150px;
+  margin: 30px 0px;
+  font-family: 'Roboto', sans-serif; /* Optional: set font if needed */
+  font-size: 16px; /* Optional: set font size if needed */
+
+}
+
+/* Styling for the image container */
+.content .myImg {
+  width: 40%;
+  
+  transition: opacity 1s ease-out; /* Smooth transition for opacity */
+  align-items: flex-end;
+}
+
+
+/* Styling for the image */
+.myImg img {
+  width: 70%;
+  border: 3px solid rgb(15, 15, 15);
+}
+
+
+
+/* Role text styles */
+.roleWrapper {
+  display: flex;
+  align-items: center;
+
+}
+
+.roleText {
+  font-size: 70px;
+  font-family: 'Roboto', sans-serif;
+  color:rgb(131, 65, 47); 
+  margin-right: 20px; /* Adjust spacing between Web and role */
+  margin-bottom: 40px;
+  font-weight: 700;
+
+}
+
+.role {
+  width: 100%;
+  text-align: left;
+  animation: fadeInUp 0.5s forwards; /* Default animation */
+  font-size: 70px;
+  font-family: 'Roboto', sans-serif; /* Bold, impactful font */
+  color:rgb(131, 65, 47); 
+  margin-bottom: 40px;
+  font-weight: 700;
+
+}
+
+.role.drop {
+  animation: drop 0.5s forwards; /* Drop effect on text when changing */
+
+}
+
+
+@keyframes drop {
+  0% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  50% {
+    opacity: 0;
+    transform: translateY(20px); /* Drop down effect */
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
