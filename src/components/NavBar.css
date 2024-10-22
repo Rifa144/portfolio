@@ -7,7 +7,8 @@
     align-items: center;
     justify-content: space-between;
     padding: 0 4em;
-    z-index: 999;
+    background-color: white;
+    z-index: 2;
   }
   
   
@@ -17,12 +18,12 @@
     text-decoration: none;
     text-transform: uppercase;
     font-weight: 500;
-    font-size: 16px;
- 
-  
-    
+    font-size: 18px;
+   font-weight: 400;
+    background-color: white;
   }
   
+
   
   a::after {
     content: ""; /* Required to create a pseudo-element */
@@ -30,16 +31,20 @@
     left: 0;
     bottom: -5px; /* Position it just below the text */
     width: 100%; /* Full width of the text */
-    height: 3px; /* Height of the underline */
+    height: 1px; /* Height of the underline */
     transform: scaleX(0); /* Start with a scale of 0 to hide it */
     transform-origin: left; /* Scale from the left side */
-    transition: transform 0.3s ease; /* Animation effect */
+    transition: transform 0.3s ease; 
+    background-color: black;/* Animation effect */
   }
   
   a:hover::after {
     transform: scaleX(1); /* Scale to full width on hover */
   }
   
+  a:active::after{
+    transform: scaleX(1);
+  }
   
   .logo {
     position: fixed;
@@ -47,11 +52,14 @@
     left: 50%;
     transform: translateX(-50%);
     padding: 0.5em;
-    z-index: 1000;
-    font-family: 'Archivo Black', sans-serif; /* Bold, impactful font for headings */
-    font-weight: 400;
-    font-style: normal;
+    z-index: 2;
+    font-family: "Homemade Apple", cursive;
+        font-weight: 400;
+        font-style: normal;
+        font-size: 25px;
+   color: rgb(0, 0, 0);
     opacity: 0; 
+    
     /* Initial opacity set by GSAP animation */
   }
   

@@ -5,10 +5,10 @@ import { gsap } from "gsap";
 
 
 
-function NavBar() {
+function NavBar({textEnter, textLeave}) {
     useEffect(() => {
         // Initialize GSAP animation when component mounts
-        const tl = gsap.timeline({ defaults: { duration: 1.5, ease: "power2.out" } });
+        const tl = gsap.timeline({ defaults: { duration: 0.5, ease: "power2.out" } });
         
         // Delay animation start using setTimeout
         setTimeout(() => {
@@ -26,22 +26,22 @@ function NavBar() {
               delay: 0.5,
             }
           );
-        }, 1000); // Delay in milliseconds
+        }, 250); // Delay in milliseconds
     
       }, []);
   return (
     <>
-    <div className="nav">
-      <div className="navLeft">
-      <Link className="nav-link" to="/">
+    <div className="nav" onMouseEnter={textEnter} onMouseLeave={textLeave}>
+      <div className="navLeft" >
+      <Link className="nav-link" to="/" >
                   Home
               </Link>
         <Link className="nav-link" to="/about">
               About
               </Link>
       </div>
-      <div className="navRight">
-      <Link className="nav-link" to="/projects">
+      <div className="navRight" >
+      <Link className="nav-link" to="/projects" >
               Projects
               </Link>
         <Link className="nav-link" to="/contact">
@@ -49,7 +49,7 @@ function NavBar() {
               </Link>
       </div>
     </div>
-    <div className="logoContainer">
+    <div className="logoContainer"  onMouseEnter={textEnter} onMouseLeave={textLeave}>
       <h1 className="logo">Rifa Prasla</h1>
     </div>
     <div className="container">

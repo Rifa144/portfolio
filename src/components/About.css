@@ -1,0 +1,174 @@
+
+/* Container for the entire about */
+
+.content {
+    margin: 100px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 50px; /* Remove default padding */
+    opacity: 0; /* Start hidden */
+    transition: opacity 1s ease-in; /* Smooth transition for opacity */
+    background-color: white;
+  }
+  
+  /* Fade-in effect */
+  .content.fadeIn {
+    opacity: 1; /* Fade in when in view */
+  }
+  
+  /* Styling for the information section */
+  .content .myInfo {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+  
+  }
+  
+  .greet {
+    width: 85%;
+    text-align: left;
+    font-size: 20px;
+    font-family: "Archivo Narrow", sans-serif;
+    font-optical-sizing: auto;
+    background-color: white;
+    font-style: normal;
+  
+  }
+  
+  .shortIntro {
+    background-color: white;
+    color: #303030;
+    width: 90%;
+    text-align: left;
+  }
+  
+  .content .myInfo button{
+    padding: 10px;
+    /* background-color: rgb(117, 173, 236); */
+    width: 150px;
+    margin: 30px 0px;
+    /* Optional: set font if needed */
+    font-size: 16px;
+    border: 2px solid white; /* Optional: set font size if needed */
+  background-color: black;
+  color: white;
+  }
+  
+  /* Styling for the image container */
+  .content .myImg {
+    width: 30%;
+    
+    transition: opacity 1s ease-out; /* Smooth transition for opacity */
+    align-items: flex-end;
+  }
+  
+  
+  /* Styling for the image */
+  .myImg img {
+ 
+    width: 100%;
+  
+    outline: 2px solid rgb(49, 49, 49);
+    outline-offset: 18px;
+  }
+  
+  
+  
+  /* Role text styles */
+  .roleWrapper {
+    display: flex;
+    align-items: center;
+  
+  }
+  
+  .roleText {
+    font-size: 100px;
+    font-family: "Julius Sans One", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    color:black; 
+    margin-right: 20px; /* Adjust spacing between Web and role */
+    margin-bottom: 40px;
+    font-weight: 900;
+    background-color: white;
+  
+  }
+  
+  .role {
+    width: 100%;
+    text-align: left;
+    animation: fadeInUp 0.5s forwards; /* Default animation */
+    font-size: 100px;
+    font-family: "Julius Sans One", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    color:black;
+    margin-bottom: 40px;
+    font-weight: 900;
+    background-color: white;
+  
+  }
+  
+  .role.drop {
+    animation: drop 0.5s forwards; /* Drop effect on text when changing */
+  
+  }
+  
+  
+  @keyframes drop {
+    0% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    50% {
+      opacity: 0;
+      transform: translateY(20px); /* Drop down effect */
+    }
+    100% {
+      opacity: 0;
+    }
+  }
+  
+  @keyframes fadeInUp {
+    0% {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+
+  .paragraph{
+    font-size: 25px;
+    max-width: 100%;
+    padding: 100px 200px;
+line-height: 1;
+    display: flex;
+    flex-wrap: wrap;
+    background-color: black;
+    justify-content: center;
+    
+}
+
+.word{
+    margin-right: 5px;
+    margin-top: 12px;
+    position: relative;
+    color:white;
+  
+    
+}
+.shadow{
+    position: absolute;
+  
+    color: white;
+    opacity: 0.3;
+}
+  
+  

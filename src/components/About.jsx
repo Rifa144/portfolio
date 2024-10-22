@@ -2,9 +2,16 @@ import transition from "../transition";
 import { useState } from "react";
 import { useRef } from "react";
 import { useEffect } from "react";
-import aboutImage from '../assets/subHeader.jpg'
+import aboutImage from '../assets/aboutHeader.jpg'
+import './About.css';
+import './Home.css';
+import Word from "./Word"
 
-function About() {
+
+const paragraph = "Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium qui voluptatibus rerum? Sunt consequatur inventore assumenda, molestiae pariatur eos illum sed odio nobis aliquid quam consequuntur, at tempore distinctio? Odit atque hic incidunt quisquam alias vel fugiat harum nesciunt nulla, sit ducimus ipsa perspiciatis provident odio culpa corrupti, doloremque pariatur?"
+
+
+function About({ textEnter, textLeave }) {
     const [role, setRole] = useState('Developer'); // Added state for role text
   const [animate, setAnimate] = useState(false); // Added state for animation control
   const [inView, setInView] = useState(false); // State to control fadeIn effect
@@ -46,26 +53,32 @@ function About() {
   }, []);
 
   return (
+    <>
     <div
       className={`content ${inView ? 'fadeIn' : ''}`} // Apply fadeIn class based on visibility
       ref={headerRef}
+      
     >
-      <div className="myImg">
+      <div className="myImg" onMouseEnter={textEnter} onMouseLeave={textLeave}>
         <img src={aboutImage} alt="Header" />
       </div>
 
-      <div className="myInfo">
+      <div className="myInfo" onMouseEnter={textEnter} onMouseLeave={textLeave}>
         <p className="greet">I AM A</p>
         <div className="roleWrapper">
           <span className="roleText">Web</span>
-          <span className={`role ${animate ? 'drop' : ''}`}>{role}</span>
+          <span className={`role ${animate ? 'drop' : ''}`} >{role}</span>
         </div>
-        <p className="shortIntro">
+        <p className="shortIntro" >
           Lorem ipsum dolor sit amet, consectetur adipisicing elit. Saepe fugiat placeat odio et doloremque rem optio asperiores? Debitis eum maxime, itaque assumenda voluptas mollitia illum, quae asperiores voluptatum accusantium iure libero deserunt porro numquam nemo, nam veniam. Quis, culpa. Itaque dignissimos tempore, blanditiis adipisci distinctio eaque excepturi. Deserunt, fugit modi.
         </p>
-        <button>CONNECT</button>
+        <button >CONNECT</button>
       </div>
+      
     </div>
+      <Word value={paragraph}/>
+      
+      </>
   );
 }
 
